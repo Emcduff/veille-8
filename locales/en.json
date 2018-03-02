@@ -7,5 +7,13 @@
 	"peupler": "populate",
 	"accueil": "Home",
 	"Vider": "Empty",
-	"Adresse": "Address"
+	"Adresse": "Address",
+	"Nom": "Name",
+	"Prenom": "First Name",
+	"Téléphone": "Phone",
+	"Courriel": "email",
+	"nom": "Name",
+	"prenom": "First Name",
+	"telephone": "Phone",
+	"courriel": "email"
 }

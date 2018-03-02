@@ -8,5 +8,9 @@
 	"peupler": "Peupler",
 	"accueil": "Accueil",
 	"Vider": "Vider",
-	"Adresse": "Adresse"
+	"Adresse": "Adresse",
+	"Nom": "Nom",
+	"Prenom": "Prenom",
+	"Téléphone": "Téléphone",
+	"Courriel": "Courriel"
 }
