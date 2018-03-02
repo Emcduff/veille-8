@@ -14,14 +14,13 @@ app.use(cookieParser());
 
 
 /* Ajoute l'objet i18n à l'objet global «res» */
-app.use(i18n.init);
-
 i18n.configure({
 	locales : ['fr', 'en'],
   	cookie : 'langueChoisie', 
   	directory : __dirname + '/locales'
 });
 
+app.use(i18n.init);
 
 let db // variable qui contiendra le lien sur la BD
 
@@ -50,9 +49,7 @@ app.get('/', function (req, res) {
 
  res.render('accueil.ejs')  
  
-  });
-
-
+});
 
 //////////////////////////////////////////  Route Adresse
 app.get('/adresse', function (req, res) {
@@ -130,23 +127,14 @@ app.get('/vider', (req, res) => {
 	res.redirect('/adresse');
 })
 
-/////////////////////////////////////////////////////////  Route /en
-app.get('/en', (req, res) => {
-	res.setLocale('en');
-	res.cookie('moncookie', 'en');
-	res.getCatalog() =  res.getCatalog();
-	res.getLocale() =  res.getLocale();
-})
-
 //////////////////////////////////////////////////////// La route /:locale(en|fr)
 app.get('/:locale(en|fr)',  (req, res) => {
  	res.setLocale(req.params.locale);
  	res.__(leMotAtraduire) = res.__(leMotAtraduire);
 })
 
-////////////////////////////////////////////////////////
 app.get('/', function(req, res) {
- console.log('Cookies: ', req.cookies);
- console.log('Cookies: ', req.cookies.langueChoisie);
+	console.log('Cookies: ', req.cookies);
+	console.log('Cookies: ', req.cookies.langueChoisie);
 })
 

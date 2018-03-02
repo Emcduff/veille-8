@@ -1,1 +1,9 @@
-{}
+{
+	"adresse" : "adress",
+	"rechercher" : "search",
+	"ajouter" : "add",
+	"modifier" : "update",
+	"detruire" : "destroy",
+	"trier" : "sort",
+	"peupler" : "populate"
+}

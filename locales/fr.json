@@ -1,1 +1,9 @@
-{}
+{
+	"addresse" : "addresse",
+	"rechercher" : "rechercher",
+	"ajouter" : "ajouter",
+	"modifier" : "modifier",
+	"detruire" : "detruire",
+	"trier" : "trier",
+	"peupler" : "peupler"
+}
