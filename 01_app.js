@@ -129,8 +129,8 @@ app.get('/vider', (req, res) => {
 
 //////////////////////////////////////////////////////// La route /:locale(en|fr)
 app.get('/:locale(en|fr)',  (req, res) => {
- 	res.setLocale(req.params.locale);
- 	res.__(leMotAtraduire) = res.__(leMotAtraduire);
+	res.setLocale(req.params.locale);
+ 	console.log('res.__(leMotAtraduire) = ' + res.__(leMotAtraduire));
 })
 
 app.get('/', function(req, res) {
