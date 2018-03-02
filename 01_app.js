@@ -6,15 +6,17 @@ const bodyParser= require('body-parser');
 const MongoClient = require('mongodb').MongoClient; // le pilote MongoDB
 const ObjectID = require('mongodb').ObjectID;
 const i18n = require("i18n");
+const cookieParser = require('cookie-parser');
+
 app.use(bodyParser.urlencoded({extended: true}));
-/* on associe le moteur de vue au module «ejs» */
-app.use(express.static('public'));
+app.use(express.static('public')); 
+app.use(cookieParser());
 
 
 /* Ajoute l'objet i18n à l'objet global «res» */
 app.use(i18n.init);
 
-i18n.configure({ 
+i18n.configure({
 	locales : ['fr', 'en'],
   	cookie : 'langueChoisie', 
   	directory : __dirname + '/locales'
@@ -132,11 +134,19 @@ app.get('/vider', (req, res) => {
 app.get('/en', (req, res) => {
 	res.setLocale('en');
 	res.cookie('moncookie', 'en');
+	res.getCatalog() =  res.getCatalog();
+	res.getLocale() =  res.getLocale();
 })
 
 //////////////////////////////////////////////////////// La route /:locale(en|fr)
-app.get('/:locale(en|fr',  (req, res) => {
+app.get('/:locale(en|fr)',  (req, res) => {
  	res.setLocale(req.params.locale);
+ 	res.__(leMotAtraduire) = res.__(leMotAtraduire);
 })
 
+////////////////////////////////////////////////////////
+app.get('/', function(req, res) {
+ console.log('Cookies: ', req.cookies);
+ console.log('Cookies: ', req.cookies.langueChoisie);
+})
 
