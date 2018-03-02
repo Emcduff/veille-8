@@ -1,9 +1,11 @@
 {
-	"adresse" : "adress",
-	"rechercher" : "search",
-	"ajouter" : "add",
-	"modifier" : "update",
-	"detruire" : "destroy",
-	"trier" : "sort",
-	"peupler" : "populate"
+	"adresse": "address",
+	"rechercher": "search",
+	"ajouter": "add",
+	"modifier": "update",
+	"detruire": "destroy",
+	"peupler": "populate",
+	"accueil": "Home",
+	"Vider": "Empty",
+	"Adresse": "Address"
 }

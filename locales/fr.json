@@ -1,9 +1,12 @@
 {
-	"addresse" : "addresse",
-	"rechercher" : "rechercher",
-	"ajouter" : "ajouter",
-	"modifier" : "modifier",
-	"detruire" : "detruire",
-	"trier" : "trier",
-	"peupler" : "peupler"
+	"addresse": "Addresse",
+	"rechercher": "Rechercher",
+	"ajouter": "Ajouter",
+	"modifier": "Modifier",
+	"detruire": "Détruire",
+	"trier": "Trier",
+	"peupler": "Peupler",
+	"accueil": "Accueil",
+	"Vider": "Vider",
+	"Adresse": "Adresse"
 }
