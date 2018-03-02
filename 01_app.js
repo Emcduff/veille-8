@@ -5,13 +5,20 @@ const app = express();
 const bodyParser= require('body-parser');
 const MongoClient = require('mongodb').MongoClient; // le pilote MongoDB
 const ObjectID = require('mongodb').ObjectID;
+const i18n = require("i18n");
 app.use(bodyParser.urlencoded({extended: true}));
 /* on associe le moteur de vue au module «ejs» */
 app.use(express.static('public'));
 
 
 /* Ajoute l'objet i18n à l'objet global «res» */
+app.use(i18n.init);
 
+i18n.configure({ 
+	locales : ['fr', 'en'],
+  	cookie : 'langueChoisie', 
+  	directory : __dirname + '/locales'
+});
 
 
 let db // variable qui contiendra le lien sur la BD
@@ -114,11 +121,22 @@ app.get('/trier/:cle/:ordre', (req, res) => {
 app.get('/vider', (req, res) => {
 
 	let cursor = db.collection('adresse').drop((err, res)=>{
-		if(err) console.error(err)
-			console.log('ok')
+		if(err) console.error(err);
+			console.log('ok');
 			
 		})
-	res.redirect('/adresse')
+	res.redirect('/adresse');
+})
+
+/////////////////////////////////////////////////////////  Route /en
+app.get('/en', (req, res) => {
+	res.setLocale('en');
+	res.cookie('moncookie', 'en');
+})
+
+//////////////////////////////////////////////////////// La route /:locale(en|fr)
+app.get('/:locale(en|fr',  (req, res) => {
+ 	res.setLocale(req.params.locale);
 })
 
 
